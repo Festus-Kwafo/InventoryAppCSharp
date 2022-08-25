@@ -1,9 +1,9 @@
 # Programming II IA
 You have been hired as a software engineer to develop an inventory system for Shop-rite Ghana Limited. As part of the Software Development Life Cycle(SDLC), the following requirements were captured and documented as functional and non-functional requirements. 
 
-🤞 An admin should be able to manage product categories. 
-🤞 An admin should be able to manage products. 
-🤞 An admin should be able to set a reorder level for each product. 
+🤞 An admin should be able to manage product categories.\
+🤞 An admin should be able to manage products.\
+🤞 An admin should be able to set a reorder level for each product.\ 
 🤞 An admin should be able to manage stock. 
 🤞 An admin should be able to create and manage other users.
 🤞 An admin should be able to reset password for other users. (Attendance and admins)
