@@ -3,8 +3,8 @@ You have been hired as a software engineer to develop an inventory system for Sh
 
 🤞 An admin should be able to manage product categories.\
 🤞 An admin should be able to manage products.\
-🤞 An admin should be able to set a reorder level for each product. \ 
 🤞 An admin should be able to manage stock.\
+🤞 An admin should be able to set a reorder level for each product.\
 🤞 An admin should be able to create and manage other users.\
 🤞 An admin should be able to reset password for other users. (Attendance and admins)\
 🤞 An attendant should be able to open and start till (sales).\
