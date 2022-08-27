@@ -29,10 +29,11 @@ namespace InventoryApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.catId = new System.Windows.Forms.TextBox();
             this.catDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.refreshCat = new System.Windows.Forms.Button();
             this.catDescription = new System.Windows.Forms.TextBox();
@@ -45,10 +46,10 @@ namespace InventoryApp
             this.addCart = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.catId = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.catDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,42 +65,52 @@ namespace InventoryApp
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.catName);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(183, 64);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(244, 79);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(636, 483);
+            this.panel3.Size = new System.Drawing.Size(848, 594);
             this.panel3.TabIndex = 3;
+            // 
+            // catId
+            // 
+            this.catId.Location = new System.Drawing.Point(481, 43);
+            this.catId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.catId.Name = "catId";
+            this.catId.Size = new System.Drawing.Size(132, 22);
+            this.catId.TabIndex = 23;
+            this.catId.Visible = false;
             // 
             // catDataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.catDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.catDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.catDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.catDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.catDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.catDataGridView.ColumnHeadersHeight = 4;
             this.catDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.catDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.catDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.catDataGridView.GridColor = System.Drawing.Color.Orange;
-            this.catDataGridView.Location = new System.Drawing.Point(2, 261);
-            this.catDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.catDataGridView.Location = new System.Drawing.Point(3, 321);
+            this.catDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.catDataGridView.Name = "catDataGridView";
             this.catDataGridView.RowHeadersVisible = false;
             this.catDataGridView.RowHeadersWidth = 51;
             this.catDataGridView.RowTemplate.Height = 24;
-            this.catDataGridView.Size = new System.Drawing.Size(634, 220);
+            this.catDataGridView.Size = new System.Drawing.Size(845, 271);
             this.catDataGridView.TabIndex = 22;
             this.catDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.catDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -129,10 +140,10 @@ namespace InventoryApp
             this.refreshCat.BackColor = System.Drawing.Color.Orange;
             this.refreshCat.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshCat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.refreshCat.Location = new System.Drawing.Point(548, 231);
-            this.refreshCat.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshCat.Location = new System.Drawing.Point(731, 284);
+            this.refreshCat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refreshCat.Name = "refreshCat";
-            this.refreshCat.Size = new System.Drawing.Size(70, 29);
+            this.refreshCat.Size = new System.Drawing.Size(93, 36);
             this.refreshCat.TabIndex = 21;
             this.refreshCat.Text = "Refresh";
             this.refreshCat.UseVisualStyleBackColor = false;
@@ -140,29 +151,28 @@ namespace InventoryApp
             // 
             // catDescription
             // 
-            this.catDescription.Location = new System.Drawing.Point(36, 103);
-            this.catDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.catDescription.Location = new System.Drawing.Point(48, 127);
+            this.catDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.catDescription.Name = "catDescription";
-            this.catDescription.Size = new System.Drawing.Size(236, 20);
+            this.catDescription.Size = new System.Drawing.Size(313, 22);
             this.catDescription.TabIndex = 7;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(33, 80);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(44, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 19);
+            this.label8.Size = new System.Drawing.Size(197, 24);
             this.label8.TabIndex = 6;
             this.label8.Text = "Product Description";
             // 
             // catName
             // 
-            this.catName.Location = new System.Drawing.Point(36, 35);
-            this.catName.Margin = new System.Windows.Forms.Padding(2);
+            this.catName.Location = new System.Drawing.Point(48, 43);
+            this.catName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.catName.Name = "catName";
-            this.catName.Size = new System.Drawing.Size(265, 20);
+            this.catName.Size = new System.Drawing.Size(352, 22);
             this.catName.TabIndex = 1;
             this.catName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -170,10 +180,9 @@ namespace InventoryApp
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 12);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(44, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 19);
+            this.label5.Size = new System.Drawing.Size(158, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Category Name";
             // 
@@ -184,10 +193,10 @@ namespace InventoryApp
             this.panel2.Controls.Add(this.catUpdate);
             this.panel2.Controls.Add(this.addCart);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(142, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(189, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(704, 48);
+            this.panel2.Size = new System.Drawing.Size(939, 59);
             this.panel2.TabIndex = 4;
             // 
             // catDelete
@@ -195,10 +204,10 @@ namespace InventoryApp
             this.catDelete.BackColor = System.Drawing.Color.Red;
             this.catDelete.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.catDelete.Location = new System.Drawing.Point(616, 11);
-            this.catDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.catDelete.Location = new System.Drawing.Point(821, 14);
+            this.catDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.catDelete.Name = "catDelete";
-            this.catDelete.Size = new System.Drawing.Size(66, 29);
+            this.catDelete.Size = new System.Drawing.Size(88, 36);
             this.catDelete.TabIndex = 3;
             this.catDelete.Text = "Delete";
             this.catDelete.UseVisualStyleBackColor = false;
@@ -209,10 +218,10 @@ namespace InventoryApp
             this.catUpdate.BackColor = System.Drawing.Color.Orange;
             this.catUpdate.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.catUpdate.Location = new System.Drawing.Point(535, 12);
-            this.catUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.catUpdate.Location = new System.Drawing.Point(713, 15);
+            this.catUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.catUpdate.Name = "catUpdate";
-            this.catUpdate.Size = new System.Drawing.Size(76, 29);
+            this.catUpdate.Size = new System.Drawing.Size(101, 36);
             this.catUpdate.TabIndex = 2;
             this.catUpdate.Text = "Update";
             this.catUpdate.UseVisualStyleBackColor = false;
@@ -223,10 +232,10 @@ namespace InventoryApp
             this.addCart.BackColor = System.Drawing.Color.Orange;
             this.addCart.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addCart.Location = new System.Drawing.Point(472, 11);
-            this.addCart.Margin = new System.Windows.Forms.Padding(2);
+            this.addCart.Location = new System.Drawing.Point(629, 14);
+            this.addCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addCart.Name = "addCart";
-            this.addCart.Size = new System.Drawing.Size(62, 29);
+            this.addCart.Size = new System.Drawing.Size(83, 36);
             this.addCart.TabIndex = 1;
             this.addCart.Text = "Add";
             this.addCart.UseVisualStyleBackColor = false;
@@ -237,34 +246,44 @@ namespace InventoryApp
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Orange;
-            this.label4.Location = new System.Drawing.Point(286, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(381, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 19);
+            this.label4.Size = new System.Drawing.Size(155, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Add Category";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Orange;
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 574);
+            this.panel1.Size = new System.Drawing.Size(241, 706);
             this.panel1.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(16, 239);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 24);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Sales";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(15, 118);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(16, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 19);
+            this.label3.Size = new System.Drawing.Size(125, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Categories";
             // 
@@ -273,43 +292,37 @@ namespace InventoryApp
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(18, 162);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(16, 193);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 19);
+            this.label2.Size = new System.Drawing.Size(93, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Product";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 81);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(16, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 19);
+            this.label1.Size = new System.Drawing.Size(201, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Management";
             // 
-            // catId
-            // 
-            this.catId.Location = new System.Drawing.Point(361, 35);
-            this.catId.Name = "catId";
-            this.catId.Size = new System.Drawing.Size(100, 20);
-            this.catId.TabIndex = 23;
-            this.catId.Visible = false;
-            // 
             // CategoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 572);
+            this.ClientSize = new System.Drawing.Size(1129, 704);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CategoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoryForm";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -341,5 +354,6 @@ namespace InventoryApp
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView catDataGridView;
         private System.Windows.Forms.TextBox catId;
+        private System.Windows.Forms.Label label6;
     }
 }

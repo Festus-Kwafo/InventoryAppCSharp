@@ -22,8 +22,8 @@ namespace InventoryApp
             InitializeComponent();
             populate();
         }
-        
 
+        MySqlConnection conn = new MySqlConnection("server=localhost;database=inventoryapp;uid=root;pwd=;");
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -40,9 +40,6 @@ namespace InventoryApp
                 }
                 else
                 {
-                    string myConnectionString = "server=localhost;database=inventoryapp;uid=root;pwd=;";
-                    MySqlConnection conn = new MySqlConnection(myConnectionString);
-                    conn = new MySqlConnection(myConnectionString);
                     conn.Open();
                     string sqlStatement = $"INSERT INTO category (name, description) VALUES ('{catName.Text}', '{catDescription.Text}');";
                     MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
@@ -72,9 +69,7 @@ namespace InventoryApp
         {
             try
             {
-                string myConnectionString = "server=localhost;database=inventoryapp;uid=root;pwd=;";
-                MySqlConnection conn = new MySqlConnection(myConnectionString);
-                conn = new MySqlConnection(myConnectionString);
+                conn.Open();
                 string sqlstatement = $"select id, name, description from category;";
                 MySqlDataAdapter sda = new MySqlDataAdapter(sqlstatement, conn);
                 var ds = new DataSet();
@@ -110,9 +105,6 @@ namespace InventoryApp
                 }
                 else
                 {
-                    string myConnectionString = "server=localhost;database=inventoryapp;uid=root;pwd=;";
-                    MySqlConnection conn = new MySqlConnection(myConnectionString);
-                    conn = new MySqlConnection(myConnectionString);
                     conn.Open();
                     string sqlstatement = $"delete from category where name='{catName.Text}';";
                     MySqlCommand cmd = new MySqlCommand(sqlstatement, conn);
@@ -137,9 +129,6 @@ namespace InventoryApp
                 {
                     MessageBox.Show("Missing Information");
                 }
-                string myConnectionString = "server=localhost;database=inventoryapp;uid=root;pwd=;";
-                MySqlConnection conn = new MySqlConnection(myConnectionString);
-                conn = new MySqlConnection(myConnectionString);
                 conn.Open();
                 string sqlstatement = $"update category set name='{catName.Text}', description='{catDescription.Text}' where id={catId.Text};";
                 MySqlCommand cmd = new MySqlCommand(sqlstatement, conn);
@@ -152,6 +141,13 @@ namespace InventoryApp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            ProductForm prod = new ProductForm();
+            prod.Show();
+            this.Hide();
         }
     }
 }
