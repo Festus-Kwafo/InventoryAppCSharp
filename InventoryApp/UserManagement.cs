@@ -77,7 +77,8 @@ namespace InventoryApp
 
                     HashSalt hashSalt = GenerateSaltedHash(64, password.Text);
                     conn.Open();
-                    string sqlStatement = @"INSERT INTO users (first_name, last_name, dob, email, hash, salt) VALUES (@first_name, @last_name, @dob, @email, @hash, @salt);";
+
+                    string sqlStatement = @"INSERT INTO users (first_name, last_name, dob, email, hash, salt, password) VALUES (@first_name, @last_name, @dob, @email, @hash, @salt, @password);";
                     MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                     
                     cmd.Parameters.AddWithValue("@hash", hashSalt.Hash);
@@ -85,6 +86,7 @@ namespace InventoryApp
                     cmd.Parameters.AddWithValue("@first_name", first_name.Text);
                     cmd.Parameters.AddWithValue("@last_name", lastname.Text);
                     cmd.Parameters.AddWithValue("@email", email.Text);
+                    cmd.Parameters.AddWithValue("@password", password.Text);
                     cmd.Parameters.AddWithValue("@dob", dob.Value.ToString("yyyy-MM-dd"));
                     cmd.ExecuteNonQuery();
                     MessageBox.Show($"User {first_name.Text} has been Created Successfully");

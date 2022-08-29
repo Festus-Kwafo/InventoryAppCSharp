@@ -46,7 +46,6 @@ namespace InventoryApp
             this.panel3 = new System.Windows.Forms.Panel();
             this.prodDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.prodId = new System.Windows.Forms.TextBox();
-            this.selectCat = new System.Windows.Forms.ComboBox();
             this.refProduct = new System.Windows.Forms.Button();
             this.prodQuant = new System.Windows.Forms.TextBox();
             this.prodRetPrice = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@ namespace InventoryApp
             this.label3.Size = new System.Drawing.Size(67, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Sales";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // Categories
             // 
@@ -202,7 +202,6 @@ namespace InventoryApp
             // 
             this.panel3.Controls.Add(this.prodDataGridView);
             this.panel3.Controls.Add(this.prodId);
-            this.panel3.Controls.Add(this.selectCat);
             this.panel3.Controls.Add(this.refProduct);
             this.panel3.Controls.Add(this.prodQuant);
             this.panel3.Controls.Add(this.prodRetPrice);
@@ -290,18 +289,6 @@ namespace InventoryApp
             this.prodId.Size = new System.Drawing.Size(100, 23);
             this.prodId.TabIndex = 24;
             this.prodId.Visible = false;
-            // 
-            // selectCat
-            // 
-            this.selectCat.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectCat.ForeColor = System.Drawing.Color.Orange;
-            this.selectCat.FormattingEnabled = true;
-            this.selectCat.Location = new System.Drawing.Point(536, 288);
-            this.selectCat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.selectCat.Name = "selectCat";
-            this.selectCat.Size = new System.Drawing.Size(169, 28);
-            this.selectCat.TabIndex = 23;
-            this.selectCat.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // refProduct
             // 
@@ -518,7 +505,6 @@ namespace InventoryApp
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button delProduct;
         private System.Windows.Forms.Button updtProduct;
-        private System.Windows.Forms.ComboBox selectCat;
         private System.Windows.Forms.Button refProduct;
         private System.Windows.Forms.TextBox prodQuant;
         private System.Windows.Forms.TextBox prodRetPrice;

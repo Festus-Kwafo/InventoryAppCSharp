@@ -14,6 +14,13 @@ namespace InventoryApp
 {
     public partial class Form1 : Form
     {
+        private void MB(string Text, String Title, MessageBoxIcon ICON)
+        {
+            MessageBox.Show(Text, Title,
+                    MessageBoxButtons.OKCancel,
+                    ICON);
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -29,30 +36,21 @@ namespace InventoryApp
         {
 
         }
-        public static bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
+        public static bool VerifyPassword(string enteredPassword, string storedPassword)
         {
-            var saltBytes = Convert.FromBase64String(storedSalt);
-            var rfc2898DeriveBytes = new Rfc2898DeriveBytes(enteredPassword, saltBytes, 10000);
-            Console.WriteLine($"inputhash {Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256))}");
-            Console.WriteLine($"storedhash {storedHash}");
             bool bEqual = false;
-            if (Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256)).Length == storedHash.Length)
+            if (enteredPassword.Length == storedPassword.Length)
             {
                 int i = 0;
-                while ((i < Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256)).Length) && (Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256))[i] == storedHash[i]))
+                while ((i < enteredPassword.Length) && (enteredPassword[i] == storedPassword[i]))
                 {
                     i += 1;
                 }
-                if (i == Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256)).Length)
+                if (i == enteredPassword.Length)
                 {
                     bEqual = true;
                 }
             }
-
-            if (bEqual)
-                Console.WriteLine("The two hash values are the same");
-            else
-                Console.WriteLine("The two hash values are not the same");
             return bEqual;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -60,37 +58,79 @@ namespace InventoryApp
             try
             {
                 conn.Open();
-                string sqlstatement = $"Select email, salt, hash from users WHERE email = '{username.Text}'";
-                MySqlCommand cmd = new MySqlCommand(sqlstatement, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
                 string role = usertypeCombo.GetItemText(usertypeCombo.SelectedItem);
-                while (reader.Read())
+                bool checkRole = true;
+                while (checkRole)
                 {
+
                     if (role == "Attendant")
                     {
-                        if (reader["email"].ToString() == username.Text)
+                        string sqlstatement = $"Select id, first_name, email, password from users WHERE email = '{username.Text}'";
+                        MySqlCommand cmd = new MySqlCommand(sqlstatement, conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        
+                        if (reader.Read() && reader["email"].ToString() == username.Text)
                         {
-                            string hash = reader["hash"].ToString();
-                            string salt = reader["salt"].ToString();
-                            bool isPasswordMatched = VerifyPassword(password.Text, hash, salt);
-                            Console.WriteLine(VerifyPassword(password.Text, hash, salt));
+                            bool isPasswordMatched = VerifyPassword(password.Text, reader["password"].ToString()); 
                             if (isPasswordMatched)
                             {
-                                MessageBox.Show("Login Successful");
+                                string sellerName = reader["first_name"].ToString();
+                                string sellerId = reader["id"].ToString();
+                                SellingForm sell = new SellingForm(sellerName, sellerId);
+                                sell.Show();
+                                this.Hide();
+
                             }
                             else
                             {
-                                MessageBox.Show("Login Unsuccessful");
+                                MB("Wrong Password", "Attendant Login", MessageBoxIcon.Error);
+                            }
+                            checkRole = false;
+                        }
+                        else
+                        {
+
+                            MB("User does not exist", "User Login", MessageBoxIcon.Error);
+                            checkRole = false;
+                            
+                        }
+                        //bool isPasswordMatched = VerifyPassword(password.Text, user.Hash, user.Salt);
+                    }
+                    else if(role == "Admin")
+                    {
+                        string sqlstatementAdmin = $"Select username, password from admin WHERE username = '{username.Text}'";
+                        MySqlCommand cmdAdmin = new MySqlCommand(sqlstatementAdmin, conn);
+                        MySqlDataReader readerAdmin = cmdAdmin.ExecuteReader();
+                        
+                        if (readerAdmin.Read() && readerAdmin["username"].ToString() == username.Text)
+                        {
+                            bool isPassMatched = VerifyPassword(password.Text, readerAdmin["password"].ToString());
+                            if (isPassMatched)
+                            {
+                                ProductForm prod = new ProductForm();
+                                prod.Show();
+                                this.Hide();
+                                checkRole = false;
+                            }
+                            else
+                            {
+                                MB("Wrong Password", "Attendant Login", MessageBoxIcon.Error);
+                                checkRole = false;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Email does not match");
+                            MB("User does not exist", "User Login", MessageBoxIcon.Error);
+                            checkRole = false;
                         }
-                        //bool isPasswordMatched = VerifyPassword(password.Text, user.Hash, user.Salt);
                     }
-                }
-                conn.Close();
+                    else
+                    {
+                        MB("Select Role", "Login", MessageBoxIcon.Error);
+                        checkRole = false;
+                    }
+                    conn.Close();
+                }                
 
             }
             catch (Exception ex)

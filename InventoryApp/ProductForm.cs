@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ZXing;
 
 namespace InventoryApp
 {
@@ -17,7 +18,27 @@ namespace InventoryApp
         {
             InitializeComponent();
         }
+
+        //private void GenerateBarcode(string Encodetxt)
+        //{
+        //    BarcodeWriter writer = new BarcodeWriter()
+        //    {
+        //        Format = BarcodeFormat.CODE_128;
+        //    }
+        //}
+
         MySqlConnection conn = new MySqlConnection("server=localhost;database=inventoryapp;uid=root;pwd=;");
+        private void MB(string Text, String Title, MessageBoxIcon ICON)
+        {
+            MessageBox.Show(Text, Title,
+                    MessageBoxButtons.OKCancel,
+                    ICON);
+        }
+        private void reOrderLevel()
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("select id, name, stock_alert, quantity from product;");
+        }
         private void fillcombo()
         {
             try
@@ -67,19 +88,30 @@ namespace InventoryApp
         {
             try
             {
-                conn.Open();
-                string sqlStatement = $"INSERT INTO product (name, manufacturer, sku, purchase_price, retail_price, quantity, stock_alert, category_id ) VALUES ('{prodName.Text}', '{prodMan.Text}', '{prodSku.Text}', {prodPurPrice.Text}, {prodRetPrice.Text}, {prodQuant.Text}, {prodStockAlert.Text}, {prodCat.SelectedValue});";
-                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show($"{prodName.Text} has been Added Successfully to Product catalog");
-                conn.Close();
-                prodName.Clear();
-                prodStockAlert.Clear();
-                prodPurPrice.Clear();
-                prodMan.Clear();
-                prodRetPrice.Clear();
-                prodSku.Clear();
-                populate();
+                int quantity = Int32.Parse(prodStockAlert.Text);
+                int stockAlert = Int32.Parse(prodQuant.Text);
+
+                if (quantity > stockAlert)
+                {
+                    MB("Quantity input is greater than Stock Alert", "Stock Alert Error", MessageBoxIcon.Error );
+                }
+                else
+                {
+                    conn.Open();
+                    string sqlStatement = $"INSERT INTO product (name, manufacturer, sku, purchase_price, retail_price, quantity, stock_alert, category_id ) VALUES ('{prodName.Text}', '{prodMan.Text}', '{prodSku.Text}', {prodPurPrice.Text}, {prodRetPrice.Text}, {prodQuant.Text}, {prodStockAlert.Text}, {prodCat.SelectedValue});";
+                    MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show($"{prodName.Text} has been Added Successfully to Product catalog");
+                    conn.Close();
+                    prodName.Clear();
+                    prodStockAlert.Clear();
+                    prodPurPrice.Clear();
+                    prodMan.Clear();
+                    prodRetPrice.Clear();
+                    prodSku.Clear();
+                    populate();
+                }
+
 
             }
                 catch(Exception ex)
@@ -98,7 +130,9 @@ namespace InventoryApp
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            UserManagement manUser = new UserManagement();
+            manUser.Show();
+            this.Hide();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,6 +224,13 @@ namespace InventoryApp
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            //SellingForm sell = new SellingForm();
+            //sell.Show();
+            //this.Hide();
         }
     }
 }

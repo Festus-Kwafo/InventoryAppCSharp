@@ -149,5 +149,24 @@ namespace InventoryApp
             prod.Show();
             this.Hide();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            UserManagement manUser = new UserManagement();
+            manUser.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            CategoryForm cat = new CategoryForm();
+            cat.Show();
+            this.Hide();
+        }
     }
 }

@@ -34,6 +34,8 @@ namespace InventoryApp
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagement));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.userGridDataView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.userId = new System.Windows.Forms.TextBox();
             this.dob = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.email = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,12 +59,10 @@ namespace InventoryApp
             this.userUpdate = new System.Windows.Forms.Button();
             this.userAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.userId = new System.Windows.Forms.TextBox();
-            this.userGridDataView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userGridDataView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userGridDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -87,6 +87,67 @@ namespace InventoryApp
             this.panel3.Size = new System.Drawing.Size(848, 595);
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // userGridDataView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.userGridDataView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userGridDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.userGridDataView.ColumnHeadersHeight = 4;
+            this.userGridDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.userGridDataView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.userGridDataView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.userGridDataView.Location = new System.Drawing.Point(48, 331);
+            this.userGridDataView.Name = "userGridDataView";
+            this.userGridDataView.RowHeadersVisible = false;
+            this.userGridDataView.RowHeadersWidth = 51;
+            this.userGridDataView.RowTemplate.Height = 24;
+            this.userGridDataView.Size = new System.Drawing.Size(775, 261);
+            this.userGridDataView.TabIndex = 35;
+            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.userGridDataView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.userGridDataView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.userGridDataView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.userGridDataView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.userGridDataView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userGridDataView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.userGridDataView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.userGridDataView.ThemeStyle.HeaderStyle.Height = 4;
+            this.userGridDataView.ThemeStyle.ReadOnly = false;
+            this.userGridDataView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.userGridDataView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.userGridDataView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userGridDataView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.userGridDataView.ThemeStyle.RowsStyle.Height = 24;
+            this.userGridDataView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.userGridDataView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.userGridDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGridDataView_CellContentClick_1);
+            // 
+            // userId
+            // 
+            this.userId.Location = new System.Drawing.Point(48, 228);
+            this.userId.Name = "userId";
+            this.userId.Size = new System.Drawing.Size(100, 22);
+            this.userId.TabIndex = 34;
+            this.userId.Visible = false;
             // 
             // dob
             // 
@@ -333,65 +394,6 @@ namespace InventoryApp
             this.label4.TabIndex = 0;
             this.label4.Text = "Add Attendant User";
             // 
-            // userId
-            // 
-            this.userId.Location = new System.Drawing.Point(48, 228);
-            this.userId.Name = "userId";
-            this.userId.Size = new System.Drawing.Size(100, 22);
-            this.userId.TabIndex = 34;
-            // 
-            // userGridDataView
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.userGridDataView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userGridDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.userGridDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userGridDataView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.userGridDataView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.userGridDataView.Location = new System.Drawing.Point(48, 331);
-            this.userGridDataView.Name = "userGridDataView";
-            this.userGridDataView.RowHeadersVisible = false;
-            this.userGridDataView.RowHeadersWidth = 51;
-            this.userGridDataView.RowTemplate.Height = 24;
-            this.userGridDataView.Size = new System.Drawing.Size(775, 261);
-            this.userGridDataView.TabIndex = 35;
-            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.userGridDataView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.userGridDataView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.userGridDataView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.userGridDataView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.userGridDataView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.userGridDataView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userGridDataView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.userGridDataView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userGridDataView.ThemeStyle.HeaderStyle.Height = 4;
-            this.userGridDataView.ThemeStyle.ReadOnly = false;
-            this.userGridDataView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.userGridDataView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.userGridDataView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userGridDataView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.userGridDataView.ThemeStyle.RowsStyle.Height = 24;
-            this.userGridDataView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.userGridDataView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.userGridDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGridDataView_CellContentClick_1);
-            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,11 +409,11 @@ namespace InventoryApp
             this.Load += new System.EventHandler(this.UserManagement_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userGridDataView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userGridDataView)).EndInit();
             this.ResumeLayout(false);
 
         }
